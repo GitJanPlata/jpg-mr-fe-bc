@@ -1,6 +1,7 @@
 
+import {Entregable} from './Entregable';
 // Constructor
-class Serie {
+export class Serie implements Entregable {
   private titulo: string;
   private numeroTemporadas: number;
   private entregado: boolean;
@@ -49,12 +50,35 @@ class Serie {
     this.creador = creador;
   }
 
+  entregar(): void {
+    this.entregado = true;
+  }
+
+  devolver(): void {
+    this.entregado = false;
+  }
+
+  isEntregado(): boolean {
+    return this.entregado;
+  }
+
+  compareTo(a: Object): number {
+    if (a instanceof Serie) {
+      const serie = a as Serie;
+      if (this.numeroTemporadas > serie.numeroTemporadas) {
+        return 1;
+      } else if (this.numeroTemporadas < serie.numeroTemporadas) {
+        return -1;
+      } else {
+        return 0;
+      }
+    } else {
+      throw new Error("El objeto no es una instancia de Serie.");
+    }
+  }
+
   toString(): string {
-    return `Título: ${this.titulo}
-    \nNúmero de temporadas: ${this.numeroTemporadas}
-    \nEntregado: ${this.entregado}
-    \nGénero: ${this.genero}
-    \nCreador: ${this.creador}`;
+    return `Título: ${this.titulo}\nNúmero de temporadas: ${this.numeroTemporadas}\nEntregado: ${this.entregado}\nGénero: ${this.genero}\nCreador: ${this.creador}`;
   }
 }
 

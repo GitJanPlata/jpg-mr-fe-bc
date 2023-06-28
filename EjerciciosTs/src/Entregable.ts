@@ -1,4 +1,4 @@
-interface Entregable {
+export interface Entregable {
     entregar(): void;
     devolver(): void;
     isEntregado(): boolean;

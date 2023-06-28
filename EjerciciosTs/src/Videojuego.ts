@@ -1,4 +1,6 @@
-class Videojuego implements Entregable {
+import {Entregable} from './Entregable';
+
+export class Videojuego implements Entregable {
   private titulo: string;
   private horasEstimadas: number;
   private entregado: boolean;
