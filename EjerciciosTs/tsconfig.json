@@ -19,5 +19,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["Ejercicio1/src", "Ejercicio1/js/app.js", "Ejercicio1/js/Entregable.js"]
 }
