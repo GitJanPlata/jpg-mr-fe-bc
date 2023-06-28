@@ -3,12 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Serie = void 0;
 // Constructor
 var Serie = /** @class */ (function () {
-    function Serie(titulo, creador) {
+    function Serie(titulo, creador, numeroTemporadas, entregado, genero) {
         this.titulo = titulo;
-        this.numeroTemporadas = 3;
-        this.entregado = false;
-        this.genero = "";
         this.creador = creador;
+        this.numeroTemporadas = numeroTemporadas;
+        this.entregado = entregado;
+        this.genero = genero;
     }
     // Getters
     Serie.prototype.getTitulo = function () {

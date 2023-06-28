@@ -4,11 +4,11 @@ var Serie_1 = require("./Serie");
 var Videojuego_1 = require("./Videojuego");
 // Crear arrays de Series y Videojuegos
 var series = [
-    new Serie_1.Serie("Friends", "David Crane"),
-    new Serie_1.Serie("Breaking Bad", "Vince Gilligan"),
-    new Serie_1.Serie("Stranger Things", "The Duffer Brothers"),
-    new Serie_1.Serie("Game of Thrones", "David Benioff"),
-    new Serie_1.Serie("The Crown", "Peter Morgan")
+    new Serie_1.Serie("Friends", "David Crane", 10, true, "Comedia"),
+    new Serie_1.Serie("Breaking Bad", "Vince Gilligan", 5, false, "Drama"),
+    new Serie_1.Serie("Stranger Things", "The Duffer Brothers", 4, true, "Ciencia ficción"),
+    new Serie_1.Serie("Game of Thrones", "David Benioff", 8, true, "Fantasía"),
+    new Serie_1.Serie("The Crown", "Peter Morgan", 6, false, "Drama histórico")
 ];
 var videojuegos = [
     new Videojuego_1.Videojuego("The Legend of Zelda: Breath of the Wild", 50, "Aventura", "Nintendo"),

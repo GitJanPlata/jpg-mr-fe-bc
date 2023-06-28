@@ -7,13 +7,13 @@ export class Serie implements Entregable {
   private entregado: boolean;
   private genero: string;
   private creador: string;
-
-  constructor(titulo: string, creador: string) {
+  
+  constructor(titulo: string, creador: string, numeroTemporadas: number, entregado: boolean, genero: string) {
     this.titulo = titulo;
-    this.numeroTemporadas = 3;
-    this.entregado = false;
-    this.genero = "";
     this.creador = creador;
+    this.numeroTemporadas = numeroTemporadas;
+    this.entregado = entregado;
+    this.genero = genero;
   }
 
   // Getters
@@ -80,5 +80,7 @@ export class Serie implements Entregable {
   toString(): string {
     return `Título: ${this.titulo}\nNúmero de temporadas: ${this.numeroTemporadas}\nEntregado: ${this.entregado}\nGénero: ${this.genero}\nCreador: ${this.creador}`;
   }
+
+  
 }
 

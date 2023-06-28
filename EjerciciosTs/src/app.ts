@@ -5,15 +5,15 @@ import {Entregable} from './Entregable';
 
  // Crear arrays de Series y Videojuegos
 const series: Serie[] = [
-    new Serie("Friends", "David Crane"),
-    new Serie("Breaking Bad", "Vince Gilligan"),
-    new Serie("Stranger Things", "The Duffer Brothers"),
-    new Serie("Game of Thrones", "David Benioff"),
-    new Serie("The Crown", "Peter Morgan")
+    new Serie("Friends", "David Crane", 10, true, "Comedia"),
+    new Serie("Breaking Bad", "Vince Gilligan", 5, false, "Drama"),
+    new Serie("Stranger Things", "The Duffer Brothers", 4, true, "Ciencia ficción"),
+    new Serie("Game of Thrones", "David Benioff", 8, true, "Fantasía"),
+    new Serie("The Crown", "Peter Morgan", 6, false, "Drama histórico")
 ];
 
 const videojuegos: Videojuego[] = [
-    new Videojuego("The Legend of Zelda: Breath of the Wild", 50, "Aventura", "Nintendo"),
+    new Videojuego("The Legend of Zelda: Breath of the Wild", 500, "Aventura", "Nintendo"),
     new Videojuego("Red Dead Redemption 2", 60, "Acción", "Rockstar Games"),
     new Videojuego("The Witcher 3: Wild Hunt", 70, "RPG", "CD Projekt"),
     new Videojuego("Grand Theft Auto V", 80, "Acción", "Rockstar Games"),
