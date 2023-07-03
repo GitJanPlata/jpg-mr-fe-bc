@@ -6,7 +6,7 @@ export class Espectador {
     constructor(newNom: string = generateRandomName(), newEdad: number = 0) {
         this.nombre = newNom;
         this.edad = Math.floor(Math.random() * 80) + 1;
-        this.dinero = Math.floor(Math.random() * 0) + 1;
+        this.dinero = Math.floor(Math.random() * 80) + 1;
     }
 }
 
