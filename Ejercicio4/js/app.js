@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Estudiante_1 = require("../src/Estudiante");
-var Persona_1 = require("../src/Persona");
-var Profesor_1 = require("../src/Profesor");
-var Aula_1 = require("../src/Aula");
+var Estudiante_1 = require("../js/Estudiante");
+var Persona_1 = require("../js/Persona");
+var Profesor_1 = require("../js/Profesor");
+var Aula_1 = require("../js/Aula");
 // Crear algunos estudiantes
 var estudiante1 = new Estudiante_1.Estudiante('Juan', 20, Persona_1.Sexo.Masculino, 2);
 var estudiante2 = new Estudiante_1.Estudiante('Ana', 19, Persona_1.Sexo.Femenino, 9);
