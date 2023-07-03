@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+Ejercicio3/tsconfig.json
+Ejercicio3/LICENSE
+Ejercicio3/index.html
