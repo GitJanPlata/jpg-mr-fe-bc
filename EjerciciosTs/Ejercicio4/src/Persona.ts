@@ -11,14 +11,14 @@ export class Persona {
     estaPresente: boolean;
 
     constructor(nombre: string, edad: number, sexo: Sexo) {
-    this.nombre = nombre;
-    this.edad = edad;
-    this.sexo = sexo;
-    this.estaPresente = true;
+        this.nombre = nombre;
+        this.edad = edad;
+        this.sexo = sexo;
+        this.estaPresente = true;
     }
 
-    // Esta es la operación que estudiante y profesor comparten para saber si estan presentes
+    // Este método es utilizado por las clases estudiantes y profesores para determinar su presencia en el aula
     determinarPresencia() {
-    this.estaPresente = Math.random() < 0.5;
+        this.estaPresente = Math.random() < 0.5;
     }
 }

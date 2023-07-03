@@ -33,6 +33,8 @@ if (puedeDarClase) {
     let calificaciones = aula.obtenerCalificaciones();
     console.log('Aula Numero', aula.id )
     console.log('Materia impartida:', aula.materia )
+    console.log('Nombre del profesor:', profesor.nombre);
+    console.log('Matéria del profesor:', profesor.materia);
     console.log('Estudiantes aprobados:', calificaciones.aprobados);
     console.log('Estudiantes suspendidos:', calificaciones.suspendidos);
 }

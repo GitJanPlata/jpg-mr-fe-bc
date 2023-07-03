@@ -13,7 +13,7 @@ var Persona = /** @class */ (function () {
         this.sexo = sexo;
         this.estaPresente = true;
     }
-    // Esta es la operación que estudiante y profesor comparten para saber si estan presentes
+    // Este método es utilizado por las clases estudiantes y profesores para determinar su presencia en el aula
     Persona.prototype.determinarPresencia = function () {
         this.estaPresente = Math.random() < 0.5;
     };

@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Estudiante_1 = require("./Estudiante");
-var Persona_1 = require("./Persona");
-var Profesor_1 = require("./Profesor");
-var Aula_1 = require("./Aula");
+var Estudiante_1 = require("../src/Estudiante");
+var Persona_1 = require("../src/Persona");
+var Profesor_1 = require("../src/Profesor");
+var Aula_1 = require("../src/Aula");
 // Crear algunos estudiantes
 var estudiante1 = new Estudiante_1.Estudiante('Juan', 20, Persona_1.Sexo.Masculino, 2);
 var estudiante2 = new Estudiante_1.Estudiante('Ana', 19, Persona_1.Sexo.Femenino, 9);
@@ -27,7 +27,9 @@ console.log('¿Se puede dar clase?', puedeDarClase ? 'Sí' : 'No');
 if (puedeDarClase) {
     var calificaciones = aula.obtenerCalificaciones();
     console.log('Aula Numero', aula.id);
-    console.log('Materia impartida', aula.materia);
+    console.log('Materia impartida:', aula.materia);
+    console.log('Nombre del profesor:', profesor.nombre);
+    console.log('Matéria del profesor:', profesor.materia);
     console.log('Estudiantes aprobados:', calificaciones.aprobados);
     console.log('Estudiantes suspendidos:', calificaciones.suspendidos);
 }

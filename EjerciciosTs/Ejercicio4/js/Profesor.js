@@ -15,19 +15,20 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Estudiante = void 0;
+exports.Profesor = void 0;
 var Persona_1 = require("./Persona");
-var Estudiante = /** @class */ (function (_super) {
-    __extends(Estudiante, _super);
-    function Estudiante(nombre, edad, sexo, calificacionActual) {
+// La clase `Profesor` extiende la clase `Persona`
+var Profesor = /** @class */ (function (_super) {
+    __extends(Profesor, _super);
+    function Profesor(nombre, edad, sexo, materia) {
         var _this = _super.call(this, nombre, edad, sexo) || this;
-        _this.calificacionActual = calificacionActual;
+        _this.materia = materia; // Asigna la materia al profesor
         return _this;
     }
-    // Los estudiantes tienen un 50% de hacer novillos
-    Estudiante.prototype.estaDisponible = function () {
-        return Math.random() > 0.5; // 50% de probabilidad de que el profesor no esté disponible
+    // Método para verificar si el profesor está disponible
+    Profesor.prototype.estaDisponible = function () {
+        return Math.random() > 0.2; // Retorna true si el número aleatorio es mayor a 0.2 (20% de probabilidad de que no esté disponible)
     };
-    return Estudiante;
+    return Profesor;
 }(Persona_1.Persona));
-exports.Estudiante = Estudiante;
+exports.Profesor = Profesor;
