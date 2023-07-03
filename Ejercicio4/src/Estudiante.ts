@@ -11,6 +11,6 @@ export class Estudiante extends Persona {
 
     // Los estudiantes tienen un 50% de hacer campana
     estaDisponible(): boolean {
-        return Math.random() > 0.5; // 50% de probabilidad de que el profesor no esté disponible
+        return Math.random() > 0.5; 
     }
 }

@@ -1,42 +1,55 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Aula = exports.Materia = void 0;
-var Persona_1 = require("./Persona");
+const Persona_1 = require("./Persona");
 var Materia;
 (function (Materia) {
     Materia["Matematicas"] = "Matematicas";
     Materia["Filosofia"] = "Filosofia";
     Materia["Fisica"] = "Fisica";
 })(Materia || (exports.Materia = Materia = {}));
-var Aula = /** @class */ (function () {
-    function Aula(id, maxEstudiantes, materia, profesor) {
-        this.estudiantes = []; // Arreglo de estudiantes presentes en el aula, inicializado como un arreglo vacío
+class Aula {
+    constructor(id, maxEstudiantes, materia, profesor) {
+        // Array de estudiantes presentes en el aula, inicializado como un array vacío
+        this.estudiantes = [];
         this.id = id;
         this.maxEstudiantes = maxEstudiantes;
         this.materia = materia;
         this.profesor = profesor;
     }
-    Aula.prototype.puedeDarseClase = function () {
-        var profesorDisponible = this.profesor.estaDisponible(); // Verifica si el profesor está disponible
-        var profesorCorrecto = this.profesor.materia === this.materia; // Verifica si el profesor enseña la materia correcta
-        var estudiantesPresentes = this.estudiantes.filter(function (e) { return e.estaDisponible(); }).length; // Cuenta la cantidad de estudiantes presentes en el aula
-        var suficientesEstudiantes = estudiantesPresentes > (this.maxEstudiantes / 2); // Verifica si hay suficientes estudiantes presentes (más de la mitad de la capacidad máxima del aula)
-        return profesorDisponible && profesorCorrecto && suficientesEstudiantes; // Devuelve true si se cumplen todas las condiciones para que se pueda dar clase en el aula
-    };
-    Aula.prototype.obtenerCalificaciones = function () {
-        var aprobados = this.estudiantes.filter(function (e) { return e.calificacionActual >= 5; }); // Filtra los estudiantes aprobados (con calificación igual o mayor a 5)
-        var suspendidos = this.estudiantes.filter(function (e) { return e.calificacionActual < 5; }); // Filtra los estudiantes suspendidos (con calificación menor a 5)
-        var aprobadosMasculino = aprobados.filter(function (e) { return e.sexo === Persona_1.Sexo.Masculino; }).length; // Cuenta la cantidad de estudiantes aprobados de género masculino
-        var aprobadosFemenino = aprobados.filter(function (e) { return e.sexo === Persona_1.Sexo.Femenino; }).length; // Cuenta la cantidad de estudiantes aprobados de género femenino
+    puedeDarseClase() {
+        // Verifica si el profesor está disponible
+        const profesorDisponible = this.profesor.estaDisponible();
+        // Verifica si el profesor enseña la materia correcta
+        const profesorCorrecto = this.profesor.materia === this.materia;
+        // Cuenta la cantidad de estudiantes presentes en el aula
+        const estudiantesPresentes = this.estudiantes.filter(e => e.estaDisponible()).length;
+        // Verifica si hay suficientes estudiantes presentes (más de la mitad de la capacidad máxima del aula)
+        const suficientesEstudiantes = estudiantesPresentes > (this.maxEstudiantes / 2);
+        // Devuelve true si se cumplen todas las condiciones para que se pueda dar clase en el aula
+        return profesorDisponible && profesorCorrecto && suficientesEstudiantes;
+    }
+    obtenerCalificaciones() {
+        // Filtra los estudiantes aprobados (con calificación igual o mayor a 5)
+        const aprobados = this.estudiantes.filter(e => e.calificacionActual >= 5);
+        // Filtra los estudiantes suspendidos (con calificación menor a 5)
+        const suspendidos = this.estudiantes.filter(e => e.calificacionActual < 5);
+        // Cuenta la cantidad de estudiantes aprobados de género masculino
+        const aprobadosMasculino = aprobados.filter(e => e.sexo === Persona_1.Sexo.Masculino).length;
+        // Cuenta la cantidad de estudiantes aprobados de género femenino
+        const aprobadosFemenino = aprobados.filter(e => e.sexo === Persona_1.Sexo.Femenino).length;
         return {
             aprobados: {
+                // Cantidad total de estudiantes aprobados
                 total: aprobados.length,
+                // Cantidad de estudiantes aprobados de género masculino
                 masculino: aprobadosMasculino,
-                femenino: aprobadosFemenino // Cantidad de estudiantes aprobados de género femenino
+                // Cantidad de estudiantes aprobados de género femenino
+                femenino: aprobadosFemenino
             },
-            suspendidos: suspendidos.length // Cantidad de estudiantes suspendidos
+            // Cantidad de estudiantes suspendidos
+            suspendidos: suspendidos.length
         };
-    };
-    return Aula;
-}());
+    }
+}
 exports.Aula = Aula;

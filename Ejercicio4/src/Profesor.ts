@@ -13,6 +13,6 @@ export class Profesor extends Persona {
 
     // Método para verificar si el profesor está disponible
     estaDisponible(): boolean {
-        return Math.random() > 0.2; // Retorna true si el número aleatorio es mayor a 0.2 (20% de probabilidad de que no esté disponible)
+        return Math.random() > 0.2;
     }
 }

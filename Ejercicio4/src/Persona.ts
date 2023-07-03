@@ -3,7 +3,6 @@ export enum Sexo {
     Femenino = 'Femenino',
 }
 
-
 export class Persona {
     nombre: string;
     edad: number;
